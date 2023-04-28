@@ -8,7 +8,7 @@ name: "flare turret java"
 author: "NemesisTheory"
 
 #the fully qualified main class of the mod
-main: "example.ExampleJavaMod"
+main: "ft.starter"
 
 #the mod description as seen in the mod dialog
 description: "ok"
