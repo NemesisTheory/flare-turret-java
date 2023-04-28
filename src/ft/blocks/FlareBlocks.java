@@ -31,8 +31,8 @@ import mindustry.content.*;
 
 public class FlareBlocks {
     public static ItemTurret reverence;
-
     public static void load() {
+        
         reverence = new ItemTurret("Reverence") {{
             requirements(Category.turret, with(Items.copper, 820, Items.graphite, 655, Items.titanium, 650, Items.silicon, 455, Items.thorium, 250));
             ammo(
