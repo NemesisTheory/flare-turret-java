@@ -6,6 +6,8 @@ import arc.math.*;
 import arc.math.geom.*;
 import arc.struct.*;
 import arc.util.*;
+import mindustry.*;
+import mindustry.content.*;
 import mindustry.ai.*;
 import mindustry.ai.types.*;
 import mindustry.entities.*;
@@ -19,8 +21,7 @@ import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
 import mindustry.type.ammo.*;
-import mindustry.type.unit.*;
-import mindustry.type.weapons.*;
+import mindustry.type.block.*;
 import mindustry.world.meta.*;
 
 import static arc.graphics.g2d.Draw.*;
