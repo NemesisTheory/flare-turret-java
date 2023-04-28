@@ -14,7 +14,7 @@ import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
 import mindustry.entities.part.*;
 import mindustry.entities.pattern.*;
-import mindustry.content.Fx;
+import mindustry.content.sounds;
 import mindustry.entities.effect.SoundEffect;
 import mindustry.content.Item;
 
