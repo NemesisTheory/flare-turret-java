@@ -20,6 +20,8 @@ import mindustry.graphics.*;
 import mindustry.type.*;
 import mindustry.type.ammo.*;
 import mindustry.type.block.*;
+import mindustry.world.blocks.defense.*;
+import mindustry.world.blocks.defense.turrets.ItemTurret;
 import mindustry.world.meta.*;
 
 import static arc.graphics.g2d.Draw.*;
