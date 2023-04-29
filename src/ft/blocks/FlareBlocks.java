@@ -47,7 +47,7 @@ public class FlareBlocks {
     public static ItemTurret reverence;
     public static void load() {
 
-        reverence = new ItemTurret("Reverence") {{
+        reverence = new ItemTurret("reverence") {{
             requirements(Category.turret, with(Items.copper, 820, Items.graphite, 655, Items.titanium, 650, Items.silicon, 455, Items.thorium, 250));
             ammo(
                     Items.pyratite, new BasicBulletType(8f, 35) {{
@@ -95,7 +95,7 @@ public class FlareBlocks {
 
         }};
 
-        flareMaterializer = new GenericCrafter("Flare Materializer"){{
+        flareMaterializer = new GenericCrafter("flare-materializer"){{
             requirements(Category.crafting, with(Items.copper, 200, Items.lead, 45, Items.titanium, 60, Items.graphite, 120, Items.silicon, 80, Items.thorium, 75));
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(Items.flareItem, 1);
