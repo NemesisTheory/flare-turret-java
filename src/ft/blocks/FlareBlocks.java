@@ -72,7 +72,6 @@ public class FlareBlocks {
                         hittable = true;
                         hitEffect = new MultiEffect(Fx.hitBulletSmall, Fx.fireHit);
                         makeFire = true;
-                        shootSound = shootBig;
                         ammoMultiplier = 3;
                         splashDamage = 185f;
                         splashDamageRadius = 86f;
