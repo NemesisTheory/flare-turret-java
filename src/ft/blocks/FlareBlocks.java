@@ -62,6 +62,7 @@ public class FlareBlocks {
                         collidesAir = true;
                         hitEffect = Fx.colorSparkBig;
                         smokeEffect = Fx.fireSmoke;
+                        shootEffect = shootBig;
                         despawnEffect = Fx.fire;
                         pierce = false;
                         incendAmount = 1;
@@ -71,7 +72,7 @@ public class FlareBlocks {
                         hittable = true;
                         hitEffect = new MultiEffect(Fx.hitBulletSmall, Fx.fireHit);
                         makeFire = true;
-                        shootEffect = Fx.shootBig;
+                        shootSound = Fx.shootBig;
                         ammoMultiplier = 3;
                         splashDamage = 185f;
                         splashDamageRadius = 86f;
