@@ -37,7 +37,7 @@ import mindustry.world.draw.*;
 import mindustry.world.meta.*;
 import mindustry.content.StatusEffects;
 import mindustry.content.Items;
-import mindustry.core.Sound;
+import mindustry.assets.Sound;
 
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
