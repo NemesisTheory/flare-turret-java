@@ -42,9 +42,12 @@ import mindustry.gen.Sounds;
 
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
+import static ft.items.FlareItems.flareItem;
 
 public class FlareBlocks {
     public static ItemTurret reverence;
+    public static GenericCrafter flareMaterializer;
+    public static Item flareItem;
     public static void load() {
 
         reverence = new ItemTurret("reverence") {{
