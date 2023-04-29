@@ -88,7 +88,7 @@ public class FlareBlocks {
             shake = 1.5f;
             size = 3;
             shootCone = 18f;
-            shootSound = shootBig;
+            shootSound = Sounds.shootBig;
 
             scaledHealth = 145;
             coolant = consumeCoolant(1f);
