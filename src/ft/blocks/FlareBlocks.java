@@ -46,7 +46,7 @@ import static mindustry.type.ItemStack.*;
 public class FlareBlocks {
     public static ItemTurret reverence;
     public static void load() {
-        
+
         reverence = new ItemTurret("Reverence") {{
             requirements(Category.turret, with(Items.copper, 820, Items.graphite, 655, Items.titanium, 650, Items.silicon, 455, Items.thorium, 250));
             ammo(
@@ -92,6 +92,23 @@ public class FlareBlocks {
 
             scaledHealth = 145;
             coolant = consumeCoolant(1f);
+
+        }};
+
+        flareMaterializer = new GenericCrafter("Flare Materializer"){{
+            requirements(Category.crafting, with(Items.copper, 200, Items.lead, 45, Items.titanium, 60, Items.graphite, 120, Items.silicon, 80, Items.thorium, 75));
+            craftEffect = Fx.smeltsmoke;
+            outputItem = new ItemStack(Items.flareItem, 1);
+            craftTime = 105f;
+            size = 3;
+            hasPower = true;
+            hasLiquids =false;
+            drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("ffef99")));
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.109f;
+
+            consumeItems(with(Items.silicon, 2, Items.thorium, 3));
+            consumePower(7.3334f);
         }};
     }
 }
