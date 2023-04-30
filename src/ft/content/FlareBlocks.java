@@ -49,18 +49,21 @@ import static ft.content.FlareStatus.*;
 
 public class FlareBlocks {
     public static ItemTurret reverence;
+    public static ItemTurret fart;
     public static GenericCrafter flareMaterializer;
     public static GenericCrafter susgeUnifier;
     public static GenericCrafter flarogusIntegrator;
+    public static GenericCrafter shitHardener;
+
     public static void load() {
 
         reverence = new ItemTurret("reverence") {{
             requirements(Category.turret, with(Items.copper, 820, Items.graphite, 655, Items.titanium, 650, Items.silicon, 455, Items.thorium, 250));
             ammo(
-                    Items.pyratite, new BasicBulletType(8f, 35){{
+                    Items.pyratite, new BasicBulletType(8f, 35) {{
                         hitSize = 6f;
                         width = 12f;
-                        height = 16f;
+                        height = 16;
                         frontColor = Pal.lightishOrange;
                         backColor = Pal.lightOrange;
                         status = StatusEffects.burning;
@@ -84,13 +87,13 @@ public class FlareBlocks {
                         splashDamageRadius = 86f;
                         knockback = 0.2f;
                     }},
-                    FlareItems.flareItem, new BasicBulletType(5f, 150){{
+                    FlareItems.flareItem, new BasicBulletType(5f, 150) {{
                         hitSize = 4f;
                         width = 12f;
                         height = 16f;
                         ammoMultiplier = 1;
                         splashDamage = 60;
-                        splashDamageRadius = 45f;
+                        splashDamageRadius = 45;
                         reloadMultiplier = 1.38f;
                         frontColor = Pal.lightOrange;
                         backColor = Pal.lighterOrange;
@@ -113,14 +116,14 @@ public class FlareBlocks {
                         knockback = 0.8f;
                         hittable = true;
                     }},
-                    FlareItems.flarogusItem, new ArtilleryBulletType(12f, 215){{
+                    FlareItems.flarogusItem, new ArtilleryBulletType(12f, 215) {{
                         ammoMultiplier = 1;
                         splashDamage = 560;
                         splashDamageRadius = 75f;
                         reloadMultiplier = 0.02f;
-                        hitSize = 5f;
-                        width = 22f;
-                        height = 26f;
+                        hitSize = 5;
+                        width = 22;
+                        height = 26;
                         frontColor = Pal.lightOrange;
                         backColor = Pal.lighterOrange;
                         lifetime = 111.95f;
@@ -159,7 +162,49 @@ public class FlareBlocks {
 
         }};
 
-        flareMaterializer = new GenericCrafter("flare-materializer"){{
+        fart = new ItemTurret("fart") {{
+            requirements(Category.turret, with(Items.copper, 6000, Items.lead, 6000, Items.sand, 6000, Items.coal, 6000, Items.scrap, 6000, Items.graphite, 6000, Items.silicon, 6000, Items.silicon, 6000, Items.titanium, 6000, Items.pyratite, 6000, Items.metaglass, 6000, Items.sporePod, 6000, Items.thorium, 6000, Items.plastanium, 6000, Items.blastCompound, 6000, Items.phaseFabric, 6000, Items.surgeAlloy, 6000, FlareItems.flareItem, 600, FlareItems.susgeAlloy, 600, FlareItems.flarogusItem, 600));
+            ammo(
+                    FlareItems.shit, new BasicBulletType(8, 20000) {{
+                        hitSize = 16f;
+                        width = 16f;
+                        height = 16f;
+                        ammoMultiplier = 3;
+                        splashDamage = 500;
+                        splashDamageRadius = 10000f;
+                        reloadMultiplier = 1.2f;
+                        frontColor = Pal.lightOrange;
+                        backColor = Pal.lighterOrange;
+                        shootEffect = Fx.massiveExplosion;
+                        smokeEffect = Fx.fireSmoke;
+                        despawnEffect = Fx.blastExplosion;
+                        pierce = true;
+                        pierceCap = 10000;
+                        status = FlareStatus.explosiveDiarrhea;
+                        statusDuration = 25200f;
+                        fragOnHit = true;
+                        knockback = 80f;
+                        hittable = false;
+
+                    }}
+            );
+            reload = 200f;
+            recoilTime = reload * 5;
+            coolantMultiplier = 0.92f;
+            ammoUseEffect = Fx.casing3;
+            range = 400f;
+            inaccuracy = 20f;
+            recoil = 40f;
+            shake = 50f;
+            size = 5;
+            shootCone = 20f;
+            shootSound = Sounds.wind3;
+
+            scaledHealth = 1000;
+            coolant = consumeCoolant(2f);
+        }};
+
+        flareMaterializer = new GenericCrafter("flare-materializer") {{
             requirements(Category.crafting, with(Items.copper, 200, Items.lead, 45, Items.titanium, 60, Items.graphite, 120, Items.silicon, 80, Items.thorium, 75));
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(FlareItems.flareItem, 1);
@@ -176,7 +221,7 @@ public class FlareBlocks {
             consumePower(7.3334f);
         }};
 
-        susgeUnifier = new GenericCrafter("susge-unifier"){{
+        susgeUnifier = new GenericCrafter("susge-unifier") {{
             requirements(Category.crafting, with(Items.copper, 300, Items.lead, 85, Items.titanium, 40, Items.graphite, 140, Items.silicon, 85, Items.thorium, 85, Items.plastanium, 20));
             craftEffect = Fx.smeltsmoke;
             outputItem = new ItemStack(FlareItems.susgeAlloy, 1);
@@ -193,10 +238,10 @@ public class FlareBlocks {
             consumePower(9.2f);
         }};
 
-        flarogusIntegrator = new GenericCrafter("flarogus-integrator"){{
-            requirements(Category.crafting, with(Items.copper, 500, Items.lead, 245, Items.titanium, 260,Items.graphite, 320, Items.silicon, 180, Items.metaglass, 50, Items.thorium, 175, Items.plastanium, 80, Items.surgeAlloy, 25, FlareItems.susgeAlloy, 50, FlareItems.flareItem, 20));
+        flarogusIntegrator = new GenericCrafter("flarogus-integrator") {{
+            requirements(Category.crafting, with(Items.copper, 500, Items.lead, 245, Items.titanium, 260, Items.graphite, 320, Items.silicon, 180, Items.metaglass, 50, Items.thorium, 175, Items.plastanium, 80, Items.surgeAlloy, 25, FlareItems.susgeAlloy, 50, FlareItems.flareItem, 20));
             craftEffect = Fx.smeltsmoke;
-            outputItem = new ItemStack (FlareItems.flarogusItem, 1);
+            outputItem = new ItemStack(FlareItems.flarogusItem, 1);
             craftTime = 192f;
             size = 5;
             itemCapacity = 28;
@@ -208,6 +253,24 @@ public class FlareBlocks {
 
             consumeItems(with(FlareItems.flareItem, 5, FlareItems.susgeAlloy, 1));
             consumePower(14f);
+        }};
+
+        shitHardener = new GenericCrafter("shitHardener") {{
+            requirements(Category.crafting, with(Items.copper, 600, Items.lead, 150, Items.titanium, 950, Items.graphite, 540, Items.silicon, 800, Items.thorium, 450, Items.surgeAlloy, 165, FlareItems.flareItem, 70, FlareItems.flarogusItem, 20));
+            craftEffect = Fx.smeltsmoke;
+            outputItem = new ItemStack(FlareItems.shit, 1);
+            craftTime = 300f;
+            size = 4;
+            itemCapacity = 18;
+            hasPower = true;
+            hasLiquids = true;
+            drawer = new DrawMulti(new DrawDefault(), new DrawFlame());
+            ambientSound = Sounds.wind3;
+            ambientSoundVolume = 2f;
+
+            consumeItems(with(Items.sand, 15, Items.sporePod, 5, Items.plastanium, 3));
+            consumeLiquid(FlareLiquids.diarrheaJuice, 60f);
+            consumePower(60f);
         }};
     }
 }
