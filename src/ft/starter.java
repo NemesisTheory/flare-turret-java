@@ -8,7 +8,7 @@ import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
-import ft.content.FlareBlocks.*;
+import ft.content.FlareBlocks;
 import ft.content.FlareItems;
 
 public class starter extends Mod{
