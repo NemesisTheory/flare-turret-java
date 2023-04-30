@@ -53,7 +53,7 @@ public class FlareItems {
             cost = 1.4f;
             hardness = 10;
             radioactivity = 300000f;
-            explosiveness = 573278388f;
+            explosiveness = 35000000f;
             flammability = 0.5f;
             charge = 534f;
         }};
