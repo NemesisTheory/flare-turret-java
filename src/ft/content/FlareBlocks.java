@@ -50,6 +50,8 @@ import static ft.content.FlareStatus.*;
 public class FlareBlocks {
     public static ItemTurret reverence;
     public static GenericCrafter flareMaterializer;
+    public static GenericCrafter susgeUnifier;
+    public static GenericCrafter flarogusIntegrator;
     public static void load() {
 
         reverence = new ItemTurret("reverence") {{
@@ -163,14 +165,49 @@ public class FlareBlocks {
             outputItem = new ItemStack(FlareItems.flareItem, 1);
             craftTime = 105f;
             size = 3;
+            itemCapacity = 25;
             hasPower = true;
-            hasLiquids =false;
+            hasLiquids = false;
             drawer = new DrawMulti(new DrawDefault(), new DrawFlame(Color.valueOf("ffef99")));
             ambientSound = Sounds.smelter;
             ambientSoundVolume = 0.109f;
 
             consumeItems(with(Items.silicon, 2, Items.thorium, 3));
             consumePower(7.3334f);
+        }};
+
+        susgeUnifier = new GenericCrafter("susge-unifier"){{
+            requirements(Category.crafting, with(Items.copper, 300, Items.lead, 85, Items.titanium, 40, Items.graphite, 140, Items.silicon, 85, Items.thorium, 85, Items.plastanium, 20));
+            craftEffect = Fx.smeltsmoke;
+            outputItem = new ItemStack(FlareItems.susgeAlloy, 1);
+            craftTime = 240f;
+            size = 4;
+            itemCapacity = 30;
+            hasPower = true;
+            hasLiquids = false;
+            drawer = new DrawMulti(new DrawDefault(), new DrawFlame());
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.294f;
+
+            consumeItems(with(Items.plastanium, 3, Items.surgeAlloy, 3));
+            consumePower(9.2f);
+        }};
+
+        flarogusIntegrator = new GenericCrafter("flarogus-integrator"){{
+            requirements(Category.crafting, with(Items.copper, 500, Items.lead, 245, Items.titanium, 260,Items.graphite, 320, Items.silicon, 180, Items.metaglass, 50, Items.thorium, 175, Items.plastanium, 80, Items.surgeAlloy, 25, FlareItems.susgeAlloy, 50, FlareItems.flareItem, 20));
+            craftEffect = Fx.smeltsmoke;
+            outputItem = new ItemStack (FlareItems.flarogusItem, 1);
+            craftTime = 192f;
+            size = 5;
+            itemCapacity = 28;
+            hasPower = true;
+            hasLiquids = false;
+            drawer = new DrawMulti(new DrawDefault(), new DrawFlame());
+            ambientSound = Sounds.smelter;
+            ambientSoundVolume = 0.6824f;
+
+            consumeItems(with(FlareItems.flareItem, 5, FlareItems.susgeAlloy, 1));
+            consumePower(14f);
         }};
     }
 }
