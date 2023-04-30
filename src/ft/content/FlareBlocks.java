@@ -39,11 +39,13 @@ import mindustry.content.StatusEffects;
 import mindustry.content.Items;
 import mindustry.content.Fx;
 import mindustry.gen.Sounds;
+import ft.content.FlareStatus;
 
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
 import static ft.content.FlareItems.flareItem;
 import static ft.content.FlareItems.*;
+import static ft.content.FlareStatus.*;
 
 public class FlareBlocks {
     public static ItemTurret reverence;
@@ -53,7 +55,7 @@ public class FlareBlocks {
         reverence = new ItemTurret("reverence") {{
             requirements(Category.turret, with(Items.copper, 820, Items.graphite, 655, Items.titanium, 650, Items.silicon, 455, Items.thorium, 250));
             ammo(
-                    Items.pyratite, new BasicBulletType(8f, 35) {{
+                    Items.pyratite, new BasicBulletType(8f, 35){{
                         hitSize = 6f;
                         width = 12f;
                         height = 16;
@@ -79,6 +81,63 @@ public class FlareBlocks {
                         splashDamage = 185f;
                         splashDamageRadius = 86f;
                         knockback = 0.2f;
+                    }},
+                    FlareItems.flareItem, new BasicBulletType(5f, 150){{
+                        hitSize = 4f;
+                        width = 12f;
+                        height = 16f;
+                        ammoMultiplier = 1;
+                        splashDamage = 60;
+                        splashDamageRadius = 45;
+                        reloadMultiplier = 1.38f;
+                        frontColor = Pal.lightOrange;
+                        backColor = Pal.lighterOrange;
+                        shootEffect = Fx.shootBig;
+                        lifetime = 40f;
+                        rangeChange = 20f;
+                        collidesAir = true;
+                        hitEffect = Fx.colorSparkBig;
+                        smokeEffect = Fx.fireSmoke;
+                        despawnEffect = Fx.fire;
+                        pierce = true;
+                        pierceCap = 6;
+                        status = FlareStatus.flareStatus;
+                        statusDuration = 420f;
+                        makeFire = true;
+                        incendAmount = 1;
+                        incendSpread = 5;
+                        incendChance = 0.85f;
+                        fragOnHit = true;
+                        knockback = 0.8f;
+                        hittable = true;
+                    }},
+                    FlareItems.flarogusItem, new ArtilleryBulletType(12f, 215){{
+                        ammoMultiplier = 1;
+                        splashDamage = 560;
+                        splashDamageRadius = 75f;
+                        reloadMultiplier = 0.02f;
+                        hitSize = 5;
+                        width = 22;
+                        height = 26;
+                        frontColor = Pal.lightOrange;
+                        backColor = Pal.lighterOrange;
+                        lifetime = 111.95f;
+                        rangeChange = 221f;
+                        collidesAir = true;
+                        hitEffect = Fx.colorSparkBig;
+                        smokeEffect = Fx.fireSmoke;
+                        despawnEffect = Fx.fire;
+                        pierce = true;
+                        pierceCap = 12;
+                        status = FlareStatus.flarogusStatus;
+                        statusDuration = 308f;
+                        makeFire = true;
+                        incendAmount = 6;
+                        incendSpread = 12;
+                        incendChance = 0.9899f;
+                        fragOnHit = true;
+                        knockback = 0.12f;
+                        hittable = true;
                     }}
             );
             reload = 1.4f;
