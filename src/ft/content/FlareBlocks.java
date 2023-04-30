@@ -1,4 +1,4 @@
-package ft.blocks;
+package ft.content;
 
 import arc.graphics.*;
 import arc.math.*;
@@ -42,12 +42,12 @@ import mindustry.gen.Sounds;
 
 import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
-import static ft.items.FlareItems.flareItem;
+import static ft.content.FlareItems.flareItem;
+import static ft.content.FlareItems.*;
 
 public class FlareBlocks {
     public static ItemTurret reverence;
     public static GenericCrafter flareMaterializer;
-    public static Item flareItem;
     public static void load() {
 
         reverence = new ItemTurret("reverence") {{
@@ -101,7 +101,7 @@ public class FlareBlocks {
         flareMaterializer = new GenericCrafter("flare-materializer"){{
             requirements(Category.crafting, with(Items.copper, 200, Items.lead, 45, Items.titanium, 60, Items.graphite, 120, Items.silicon, 80, Items.thorium, 75));
             craftEffect = Fx.smeltsmoke;
-            outputItem = new ItemStack(Items.flareItem, 1);
+            outputItem = new ItemStack(FlareItems.flareItem, 1);
             craftTime = 105f;
             size = 3;
             hasPower = true;
