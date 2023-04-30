@@ -90,7 +90,7 @@ public class FlareBlocks {
                         height = 16f;
                         ammoMultiplier = 1;
                         splashDamage = 60;
-                        splashDamageRadius = 45;
+                        splashDamageRadius = 45f;
                         reloadMultiplier = 1.38f;
                         frontColor = Pal.lightOrange;
                         backColor = Pal.lighterOrange;
