@@ -16,11 +16,12 @@ import static ft.content.FlareItems.*;
 public class FlareStatus {
     public static StatusEffect flareStatus;
     public static StatusEffect flarogusStatus;
+    public static StatusEffect explosiveDiarrhea;
 
     public static void load() {
         flareStatus = new StatusEffect("flare-status"){{
             color = Pal.lightOrange;
-            damage = 2f;
+            damage = 0.5f;
             speedMultiplier = 0.85f;
 
             init(() -> {
@@ -30,10 +31,18 @@ public class FlareStatus {
 
         flarogusStatus = new StatusEffect("flarogus-status"){{
             color = Pal.lighterOrange;
-            damage = 4f;
+            damage = 2f;
             speedMultiplier = 0.7f;
             healthMultiplier = 0.5f;
             reloadMultiplier = 0.4f;
+        }};
+
+        explosiveDiarrhea = new StatusEffect("explosive-diarrhea"){{
+            color = Pal.muddy;
+            damage = 8f;
+            speedMultiplier =  0.25f;
+            healthMultiplier = 0.8f;
+            reloadMultiplier = 1.5f;
         }};
     }
 }
