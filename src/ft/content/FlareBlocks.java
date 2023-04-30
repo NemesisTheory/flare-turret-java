@@ -60,7 +60,7 @@ public class FlareBlocks {
                     Items.pyratite, new BasicBulletType(8f, 35){{
                         hitSize = 6f;
                         width = 12f;
-                        height = 16;
+                        height = 16f;
                         frontColor = Pal.lightishOrange;
                         backColor = Pal.lightOrange;
                         status = StatusEffects.burning;
@@ -118,9 +118,9 @@ public class FlareBlocks {
                         splashDamage = 560;
                         splashDamageRadius = 75f;
                         reloadMultiplier = 0.02f;
-                        hitSize = 5;
-                        width = 22;
-                        height = 26;
+                        hitSize = 5f;
+                        width = 22f;
+                        height = 26f;
                         frontColor = Pal.lightOrange;
                         backColor = Pal.lighterOrange;
                         lifetime = 111.95f;
