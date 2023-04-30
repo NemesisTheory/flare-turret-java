@@ -18,6 +18,7 @@ import static mindustry.type.ItemStack.with;
 public class FlareItems {
     public static Item flareItem;
     public static Item flarogusItem;
+    public static Item susgeAlloy;
 
     public static void load() {
         flareItem = new Item("flare-item") {{
@@ -27,6 +28,15 @@ public class FlareItems {
             explosiveness = 5000f;
             flammability = 0.01f;
             charge = 5000f;
+        }};
+
+        susgeAlloy = new Item("susge-alloy") {{
+            cost = 1.4f;
+            hardness = 1;
+            radioactivity = 21474837f;
+            explosiveness = 21474837f;
+            flammability = 0.2f;
+            charge = 21474837f;
         }};
 
         flarogusItem = new Item("flarogus-item") {{
