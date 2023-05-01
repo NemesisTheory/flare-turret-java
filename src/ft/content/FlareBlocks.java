@@ -49,6 +49,7 @@ import static ft.content.FlareStatus.*;
 
 public class FlareBlocks {
     public static ItemTurret reverence;
+    public static ItemTurret venerate;
     public static ItemTurret fart;
     public static GenericCrafter flareMaterializer;
     public static GenericCrafter susgeUnifier;
@@ -162,8 +163,108 @@ public class FlareBlocks {
 
         }};
 
+        venerate = new ItemTurret("venerate") {
+            {
+                requirements(Category.turret, with(Items.copper, 620, Items.graphite, 405, Items.titanium, 450, Items.silicon, 255, Items.thorium, 100, Items.plastanium, 280));
+                ammo(
+                        Items.plastanium, new FlakBulletType(11f, 28) {{
+                                hitSize = 4f;
+                                width = 9f;
+                                height = 12f;
+                                lifetime = 45f;
+                                collidesAir = true;
+                                smokeEffect = Fx.fireSmoke;
+                                shootEffect = Fx.shootSmall;
+                                despawnEffect = Fx.none;
+                                pierce = true;
+                                pierceCap = 4;
+                                fragOnHit = true;
+                                fragBullet = new BasicBulletType(14f, 35) {{
+                                    width = 6f;
+                                    height = 10f;
+                                    shrinkY = 1f;
+                                    lifetime = 25f;
+                                    frontColor = Pal.plastaniumFront;
+                                    backColor = Pal.plastaniumBack;
+                                    despawnEffect = Fx.none;
+                                }};
+                                fragBullets = 15;
+                                hitEffect = Fx.plasticExplosion;
+                                frontColor = Pal.plastaniumFront;
+                                backColor = Pal.plastaniumBack;
+                                collidesGround = true;
+                                explodeRange = 35f;
+                                hittable = true;
+                                hitEffect = new MultiEffect(Fx.hitBulletSmall, Fx.flakExplosion);
+                                ammoMultiplier = 3;
+                                splashDamage = 75f;
+                                splashDamageRadius = 56f;
+                                knockback = 3.6f;
+                            }},
+                        FlareItems.susgeAlloy, new FlakBulletType(14f, 95) {{
+                            hitSize = 6f;
+                            width = 12f;
+                            height = 14f;
+                            frontColor = Pal.missileYellow;
+                            backColor = Pal.missileYellowBack;
+                            lifetime = 45f;
+                            hitEffect = Fx.plasticExplosion;
+                            smokeEffect = Fx.fireSmoke;
+                            shootEffect = Fx.shootSmall;
+                            despawnEffect = Fx.none;
+                            pierce = true;
+                            pierceCap = 6;
+                            fragOnHit = true;
+                            fragBullet = new BasicBulletType(18f, 78){{
+                                width = 7f;
+                                height = 11f;
+                                shrinkY = 1f;
+                                lifetime = 25f;
+                                frontColor = Pal.missileYellow;
+                                backColor = Pal.missileYellowBack;
+                                despawnEffect = Fx.none;
+                            }};
+                            fragBullets = 22;
+                            collidesGround = true;
+                            collidesAir = true;
+                            explodeRange = 54f;
+                            hittable = true;
+                            hitEffect = new MultiEffect(Fx.hitBulletSmall, Fx.flakExplosion);
+                            ammoMultiplier = 2;
+                            splashDamage = 275;
+                            splashDamageRadius = 42f;
+                            knockback = 2.4f;
+                        }}
+                );
+                shootY = 9.45f;
+                shoot = new ShootBarrel(){
+                {
+                        barrels = new float[]{
+                                0f, 1f, 0f,
+                                3f, 0f, 0f,
+                                -3f, 0f, 0f,
+                        };
+                    }};
+                    reload = 0.2f;
+                    recoilTime = reload * 5;
+                    coolantMultiplier = 1.2f;
+                    ammoUseEffect = Fx.casing3;
+                    range = 245.822f;
+                    inaccuracy = 15f;
+                    recoil = 8.2f;
+                    rotateSpeed = 25f;
+                    shake = 1.4f;
+                    size = 3;
+                    shootCone = 60f;
+                    shootSound = Sounds.shootSnap;
+
+                    scaledHealth = 120;
+                    coolant = consumeCoolant(1.2f);
+                    limitRange();
+            }};
+
         fart = new ItemTurret("fart") {{
-            requirements(Category.turret, with(Items.copper, 6000, Items.lead, 6000, Items.sand, 6000, Items.coal, 6000, Items.scrap, 6000, Items.graphite, 6000, Items.silicon, 6000, Items.silicon, 6000, Items.titanium, 6000, Items.pyratite, 6000, Items.metaglass, 6000, Items.sporePod, 6000, Items.thorium, 6000, Items.plastanium, 6000, Items.blastCompound, 6000, Items.phaseFabric, 6000, Items.surgeAlloy, 6000, FlareItems.flareItem, 600, FlareItems.susgeAlloy, 600, FlareItems.flarogusItem, 600));
+            requirements(Category.turret, with(Items.copper, 6000, Items.lead, 6000, Items.sand, 6000, Items.coal, 6000, Items.scrap, 6000, Items.graphite, 6000, Items.silicon, Items.titanium, 6000, Items.pyratite, 6000, Items.metaglass, 6000, Items.sporePod, 6000, Items.thorium, 6000, Items.plastanium, 6000, Items.blastCompound, 6000, Items.phaseFabric, 6000, Items.surgeAlloy, 6000, FlareItems.flareItem, 600, FlareItems.susgeAlloy, 600, FlareItems.flarogusItem, 600));
             ammo(
                     FlareItems.shit, new BasicBulletType(8, 20000) {{
                         hitSize = 16f;
@@ -185,7 +286,6 @@ public class FlareBlocks {
                         fragOnHit = true;
                         knockback = 80f;
                         hittable = false;
-
                     }}
             );
             reload = 200f;
@@ -272,5 +372,4 @@ public class FlareBlocks {
             consumeLiquid(FlareLiquids.diarrheaJuice, 60f);
             consumePower(60f);
         }};
-    }
-}
+    }};
