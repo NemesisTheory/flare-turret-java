@@ -1,51 +1,20 @@
 package ft.content;
 
 import arc.graphics.*;
-import arc.math.*;
-import arc.struct.*;
-import mindustry.*;
-import mindustry.entities.*;
-import mindustry.entities.abilities.*;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
-import mindustry.entities.part.DrawPart.*;
-import mindustry.entities.part.*;
 import mindustry.entities.pattern.*;
-import mindustry.gen.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
-import mindustry.type.unit.*;
-import mindustry.world.*;
-import mindustry.world.blocks.*;
-import mindustry.world.blocks.campaign.*;
-import mindustry.world.blocks.defense.*;
 import mindustry.world.blocks.defense.turrets.*;
-import mindustry.world.blocks.distribution.*;
-import mindustry.world.blocks.environment.*;
-import mindustry.world.blocks.heat.*;
-import mindustry.world.blocks.legacy.*;
-import mindustry.world.blocks.liquid.*;
-import mindustry.world.blocks.logic.*;
-import mindustry.world.blocks.payloads.*;
-import mindustry.world.blocks.power.*;
 import mindustry.world.blocks.production.*;
-import mindustry.world.blocks.sandbox.*;
-import mindustry.world.blocks.storage.*;
-import mindustry.world.blocks.units.*;
-import mindustry.world.consumers.*;
 import mindustry.world.draw.*;
-import mindustry.world.meta.*;
 import mindustry.content.StatusEffects;
 import mindustry.content.Items;
 import mindustry.content.Fx;
 import mindustry.gen.Sounds;
-import ft.content.FlareStatus;
 
-import static mindustry.Vars.*;
 import static mindustry.type.ItemStack.*;
-import static ft.content.FlareItems.flareItem;
-import static ft.content.FlareItems.*;
-import static ft.content.FlareStatus.*;
 
 public class FlareBlocks {
     public static ItemTurret reverence;
@@ -168,39 +137,39 @@ public class FlareBlocks {
                 requirements(Category.turret, with(Items.copper, 620, Items.graphite, 405, Items.titanium, 450, Items.silicon, 255, Items.thorium, 100, Items.plastanium, 280));
                 ammo(
                         Items.plastanium, new FlakBulletType(11f, 28) {{
-                                hitSize = 4f;
-                                width = 9f;
-                                height = 12f;
-                                lifetime = 45f;
-                                collidesAir = true;
-                                smokeEffect = Fx.fireSmoke;
-                                shootEffect = Fx.shootSmall;
-                                despawnEffect = Fx.none;
-                                pierce = true;
-                                pierceCap = 4;
-                                fragOnHit = true;
-                                fragBullet = new BasicBulletType(14f, 35) {{
-                                    width = 6f;
-                                    height = 10f;
-                                    shrinkY = 1f;
-                                    lifetime = 25f;
-                                    frontColor = Pal.plastaniumFront;
-                                    backColor = Pal.plastaniumBack;
-                                    despawnEffect = Fx.none;
-                                }};
-                                fragBullets = 15;
-                                hitEffect = Fx.plasticExplosion;
+                            hitSize = 4f;
+                            width = 9f;
+                            height = 12f;
+                            lifetime = 45f;
+                            collidesAir = true;
+                            smokeEffect = Fx.fireSmoke;
+                            shootEffect = Fx.shootSmall;
+                            despawnEffect = Fx.none;
+                            pierce = true;
+                            pierceCap = 4;
+                            fragOnHit = true;
+                            fragBullet = new BasicBulletType(14f, 35) {{
+                                width = 6f;
+                                height = 10f;
+                                shrinkY = 1f;
+                                lifetime = 25f;
                                 frontColor = Pal.plastaniumFront;
                                 backColor = Pal.plastaniumBack;
-                                collidesGround = true;
-                                explodeRange = 35f;
-                                hittable = true;
-                                hitEffect = new MultiEffect(Fx.hitBulletSmall, Fx.flakExplosion);
-                                ammoMultiplier = 3;
-                                splashDamage = 75f;
-                                splashDamageRadius = 56f;
-                                knockback = 3.6f;
-                            }},
+                                despawnEffect = Fx.none;
+                            }};
+                            fragBullets = 15;
+                            hitEffect = Fx.plasticExplosion;
+                            frontColor = Pal.plastaniumFront;
+                            backColor = Pal.plastaniumBack;
+                            collidesGround = true;
+                            explodeRange = 35f;
+                            hittable = true;
+                            hitEffect = new MultiEffect(Fx.hitBulletSmall, Fx.flakExplosion);
+                            ammoMultiplier = 3;
+                            splashDamage = 75f;
+                            splashDamageRadius = 56f;
+                            knockback = 3.6f;
+                        }},
                         FlareItems.susgeAlloy, new FlakBulletType(14f, 95) {{
                             hitSize = 6f;
                             width = 12f;
@@ -238,29 +207,29 @@ public class FlareBlocks {
                 );
                 shootY = 9.45f;
                 shoot = new ShootBarrel(){
-                {
+                    {
                         barrels = new float[]{
                                 0f, 1f, 0f,
                                 3f, 0f, 0f,
                                 -3f, 0f, 0f,
                         };
                     }};
-                    reload = 0.2f;
-                    recoilTime = reload * 5;
-                    coolantMultiplier = 1.2f;
-                    ammoUseEffect = Fx.casing3;
-                    range = 245.822f;
-                    inaccuracy = 15f;
-                    recoil = 8.2f;
-                    rotateSpeed = 25f;
-                    shake = 1.4f;
-                    size = 3;
-                    shootCone = 60f;
-                    shootSound = Sounds.shootSnap;
+                reload = 0.2f;
+                recoilTime = reload * 5;
+                coolantMultiplier = 1.2f;
+                ammoUseEffect = Fx.casing3;
+                range = 245.822f;
+                inaccuracy = 15f;
+                recoil = 8.2f;
+                rotateSpeed = 25f;
+                shake = 1.4f;
+                size = 3;
+                shootCone = 60f;
+                shootSound = Sounds.shootSnap;
 
-                    scaledHealth = 120;
-                    coolant = consumeCoolant(1.2f);
-                    limitRange();
+                scaledHealth = 120;
+                coolant = consumeCoolant(1.2f);
+                limitRange();
             }};
 
         fart = new ItemTurret("fart") {{
