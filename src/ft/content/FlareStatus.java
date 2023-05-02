@@ -1,23 +1,13 @@
 package ft.content;
 
-import arc.*;
-import arc.graphics.*;
-import arc.math.*;
-import mindustry.game.EventType.*;
-import mindustry.game.*;
 import mindustry.graphics.*;
 import mindustry.type.*;
-import mindustry.content.StatusEffects;
-
-import static mindustry.Vars.*;
-import static ft.content.FlareBlocks.*;
-import static ft.content.FlareItems.*;
 
 public class FlareStatus {
     public static StatusEffect flareStatus;
     public static StatusEffect flarogusStatus;
     public static StatusEffect explosiveDiarrhea;
-
+    public static StatusEffect movus;
     public static void load() {
         flareStatus = new StatusEffect("flare-status"){{
             color = Pal.lightOrange;
@@ -44,5 +34,11 @@ public class FlareStatus {
             healthMultiplier = 0.8f;
             reloadMultiplier = 1.5f;
         }};
-    }
-}
+
+        movus = new StatusEffect("movus"){{
+            damage = 0.0001f;
+            speedMultiplier = 0.0001f;
+            healthMultiplier = 5f;
+            reloadMultiplier = 0.0001f;
+        }};
+}}
