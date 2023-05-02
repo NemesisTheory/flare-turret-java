@@ -1,19 +1,6 @@
 package ft.content;
 
-import arc.graphics.Color;
-import mindustry.content.Fx;
-import mindustry.content.Items;
-import mindustry.content.StatusEffects;
-import mindustry.entities.bullet.ArtilleryBulletType;
-import mindustry.entities.bullet.BasicBulletType;
-import mindustry.entities.effect.MultiEffect;
-import mindustry.gen.Sounds;
-import mindustry.graphics.Pal;
-import mindustry.type.Category;
 import mindustry.type.Item;
-import mindustry.world.blocks.defense.turrets.ItemTurret;
-
-import static mindustry.type.ItemStack.with;
 
 public class FlareItems {
     public static Item flareItem;
