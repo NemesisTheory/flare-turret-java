@@ -1,20 +1,26 @@
 package ft.content;
 
-import arc.graphics.*;
 import mindustry.entities.bullet.*;
 import mindustry.entities.effect.*;
 import mindustry.entities.pattern.*;
-import mindustry.graphics.*;
-import mindustry.type.*;
-import mindustry.world.blocks.defense.turrets.*;
-import mindustry.world.blocks.production.*;
+import mindustry.world.blocks.production.Drill;
 import mindustry.world.draw.*;
 import mindustry.content.StatusEffects;
 import mindustry.content.Items;
 import mindustry.content.Fx;
 import mindustry.gen.Sounds;
+import arc.graphics.Color;
+import mindustry.content.*;
+import mindustry.entities.bullet.BasicBulletType;
+import mindustry.graphics.Pal;
+import mindustry.type.Category;
+import mindustry.type.ItemStack;
+import mindustry.world.blocks.defense.turrets.ItemTurret;
+import mindustry.world.blocks.production.GenericCrafter;
+import mindustry.world.meta.BuildVisibility;
+import mindustry.world.blocks.defense.*;
 
-import static mindustry.type.ItemStack.*;
+import static mindustry.type.ItemStack.with;
 
 public class FlareBlocks {
     public static ItemTurret reverence;
@@ -24,6 +30,8 @@ public class FlareBlocks {
     public static GenericCrafter susgeUnifier;
     public static GenericCrafter flarogusIntegrator;
     public static GenericCrafter shitHardener;
+    public static Drill foskerDrill;
+    public static Wall draetheumWall;
 
     public static void load() {
 
@@ -184,7 +192,7 @@ public class FlareBlocks {
                             pierce = true;
                             pierceCap = 6;
                             fragOnHit = true;
-                            fragBullet = new BasicBulletType(18f, 78){{
+                            fragBullet = new BasicBulletType(18f, 78) {{
                                 width = 7f;
                                 height = 11f;
                                 shrinkY = 1f;
@@ -206,14 +214,15 @@ public class FlareBlocks {
                         }}
                 );
                 shootY = 9.45f;
-                shoot = new ShootBarrel(){
+                shoot = new ShootBarrel() {
                     {
                         barrels = new float[]{
                                 0f, 1f, 0f,
                                 3f, 0f, 0f,
                                 -3f, 0f, 0f,
                         };
-                    }};
+                    }
+                };
                 reload = 0.2f;
                 recoilTime = reload * 5;
                 coolantMultiplier = 1.2f;
@@ -230,7 +239,8 @@ public class FlareBlocks {
                 scaledHealth = 120;
                 coolant = consumeCoolant(1.2f);
                 limitRange();
-            }};
+            }
+        };
 
         fart = new ItemTurret("fart") {{
             requirements(Category.turret, with(Items.copper, 6000, Items.lead, 6000, Items.sand, 6000, Items.coal, 6000, Items.scrap, 6000, Items.graphite, 6000, Items.silicon, Items.titanium, 6000, Items.pyratite, 6000, Items.metaglass, 6000, Items.sporePod, 6000, Items.thorium, 6000, Items.plastanium, 6000, Items.blastCompound, 6000, Items.phaseFabric, 6000, Items.surgeAlloy, 6000, FlareItems.flareItem, 600, FlareItems.susgeAlloy, 600, FlareItems.flarogusItem, 600));
@@ -341,4 +351,22 @@ public class FlareBlocks {
             consumeLiquid(FlareLiquids.diarrheaJuice, 60f);
             consumePower(60f);
         }};
-    }};
+
+        foskerDrill = new Drill("fosker-drill") {{
+            size = 4;
+            health = 460;
+            tier = 6;
+            drillTime = 205f;
+            liquidBoostIntensity = 1.35f;
+            warmupSpeed = 0.4f;
+            consumePower(8.4f);
+            consumeLiquid(Liquids.water, 0.14f).optional(false, false);
+            consumeLiquid(Liquids.cryofluid, 0.16f).optional(false, true);
+            requirements(Category.production, BuildVisibility.shown, with(Items.copper, 150, Items.lead, 75, Items.silicon, 85, Items.thorium, 95, Items.plastanium, 45, FlareItems.verentium, 15));
+        }};
+
+        draetheumWall = new Wall("draetheum-wall"){{
+            requirements(Category.defense, with(Items.plastanium, 4, FlareItems.draetheusAlloy, 8));
+            health = 1105;
+        }};
+    }}
