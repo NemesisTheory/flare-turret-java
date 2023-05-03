@@ -7,6 +7,9 @@ public class FlareItems {
     public static Item flarogusItem;
     public static Item susgeAlloy;
     public static Item shit;
+    public static Item verentium;
+    public static Item draetheusAlloy;
+    public static Item actium;
 
     public static void load() {
         flareItem = new Item("flare-item") {{
@@ -43,6 +46,33 @@ public class FlareItems {
             explosiveness = 35000000f;
             flammability = 0.5f;
             charge = 534f;
+        }};
+
+        verentium = new Item("verentium"){{
+                cost = 1.24f;
+                hardness = 2;
+                radioactivity = 0.05f;
+                explosiveness = 0.02f;
+                flammability = 0.004f;
+                charge = 0.1f;
+        }};
+
+        draetheusAlloy = new Item("draetheus-alloy"){{
+            cost = 1.15f;
+            hardness = 2;
+            radioactivity = 0f;
+            explosiveness = 0.0014f;
+            flammability = 0f;
+            charge = 0f;
+        }};
+
+        actium = new Item("actium"){{
+            cost = 1.3f;
+            hardness = 2;
+            radioactivity = 0.2f;
+            explosiveness = 0f;
+            flammability = 0f;
+            charge = 2.4f;
         }};
     }
 }
