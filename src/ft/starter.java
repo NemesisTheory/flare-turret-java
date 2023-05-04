@@ -8,6 +8,8 @@ import mindustry.game.EventType.*;
 import mindustry.gen.*;
 import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
+import ft.content.FlareLiquids;
+import ft.content.FlareStatus;
 import ft.content.FlareBlocks;
 import ft.content.FlareItems;
 
@@ -32,7 +34,7 @@ public class starter extends Mod{
 
     @Override
     public void loadContent(){
-        FlareBlocksload();
+        FlareBlocks.load();
         FlareItems.load();
         FlareLiquids.load();
         FlareStatus.load();
