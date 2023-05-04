@@ -152,7 +152,6 @@ public class FlareBlocks {
                             collidesAir = true;
                             smokeEffect = Fx.fireSmoke;
                             shootEffect = Fx.shootSmall;
-                            despawnEffect = Fx.none;
                             pierce = true;
                             pierceCap = 4;
                             fragOnHit = true;
@@ -163,7 +162,6 @@ public class FlareBlocks {
                                 lifetime = 25f;
                                 frontColor = Pal.plastaniumFront;
                                 backColor = Pal.plastaniumBack;
-                                despawnEffect = Fx.none;
                             }};
                             fragBullets = 15;
                             hitEffect = Fx.plasticExplosion;
@@ -188,7 +186,6 @@ public class FlareBlocks {
                             hitEffect = Fx.plasticExplosion;
                             smokeEffect = Fx.fireSmoke;
                             shootEffect = Fx.shootSmall;
-                            despawnEffect = Fx.none;
                             pierce = true;
                             pierceCap = 6;
                             fragOnHit = true;
@@ -199,7 +196,6 @@ public class FlareBlocks {
                                 lifetime = 25f;
                                 frontColor = Pal.missileYellow;
                                 backColor = Pal.missileYellowBack;
-                                despawnEffect = Fx.none;
                             }};
                             fragBullets = 22;
                             collidesGround = true;
