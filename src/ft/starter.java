@@ -23,7 +23,7 @@ public class starter extends Mod{
                 BaseDialog dialog = new BaseDialog("hi");
                 dialog.cont.add("trauma").row();
                 //mod sprites are prefixed with the mod name (this mod is called 'example-java-mod' in its config)
-                dialog.cont.image(Core.atlas.find("trauma")).pad(20f).row();
+                dialog.cont.image(Core.atlas.find("flare-turret-java-trauma")).pad(20f).row();
                 dialog.cont.button("ok", dialog::hide).size(100f, 50f);
                 dialog.show();
             });
@@ -32,7 +32,10 @@ public class starter extends Mod{
 
     @Override
     public void loadContent(){
-        new FlareBlocks().load();
+        FlareBlocksload();
+        FlareItems.load();
+        FlareLiquids.load();
+        FlareStatus.load();
         Log.info("Loading content.");
     }
 
