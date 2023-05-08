@@ -10,8 +10,8 @@ import mindustry.mod.*;
 import mindustry.ui.dialogs.*;
 import ft.content.FlareLiquids;
 import ft.content.FlareStatus;
-import ft.content.FlareBlocks;
 import ft.content.FlareItems;
+import ft.content.FlareBlocks;
 
 public class starter extends Mod{
 
@@ -34,10 +34,10 @@ public class starter extends Mod{
 
     @Override
     public void loadContent(){
-        FlareBlocks.load();
+        FlareStatus.load();
         FlareItems.load();
         FlareLiquids.load();
-        FlareStatus.load();
+        FlareBlocks.load();
         Log.info("Loading content.");
     }
 
