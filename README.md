@@ -1,3 +1,3 @@
-man i aint doin ALL THIS
+secondary project
 
-# flare turret ported to java? i dont know
+# ok
